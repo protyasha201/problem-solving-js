@@ -32,3 +32,23 @@ function budgetCalculator(wactchQuantity, phoneQuantity, laptopQuantity) {
         return totalCost;
     }
 }
+
+
+//Hotel charge calculator.
+
+function hotelCost(stayingDays){
+    var hotelCost = 0;
+    var remainingDays = 0;
+    if(stayingDays <= 10){
+        hotelCost = 100 * stayingDays;
+    }
+    else if(stayingDays <= 20){
+        remainingDays = stayingDays - 10;
+        hotelCost = (80 * remainingDays) + 1000;
+    }
+    else{
+        remainingDays = stayingDays - 20;
+        hotelCost = (50 * remainingDays) + 1800;
+    }
+    return hotelCost;
+}
