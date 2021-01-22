@@ -23,7 +23,7 @@ function budgetCalculator(wactchQuantity, phoneQuantity, laptopQuantity) {
         return "Quantity can't be negative!";
     }
     else if (wactchQuantity == 0 && phoneQuantity == 0 && laptopQuantity == 0) {
-        return "You must buy at least one product."
+        return "You must buy at least one product.";
     }
     else {
         var totalWatchCost = wactchQuantity * 50;
@@ -42,7 +42,7 @@ function hotelCost(stayingDays) {
     var totalHotelCharge = 0;
     var remainingDays = 0;
     if (stayingDays < 0) {
-        return "Number of day's must be positive."
+        return "Number of day's must be positive.";
     }
     else if (stayingDays <= 10) {
         totalHotelCharge = 100 * stayingDays;
@@ -63,14 +63,25 @@ function hotelCost(stayingDays) {
 //Find the biggest name.
 
 function megaFriend(names) {
-    var biggestName = names[0];
-    for (var i = 0; i < names.length; i++) {
-        if (names[i].length > biggestName.length) {
-            biggestName = names[i];
-        }
-        else if (names[i] == " " || typeof (names[i]) == "number") {
-            return "empty strigs, numbers are not allowed as names!";
-        }
+    if (typeof (names) == "number") {
+        return "numbers are not allowed!";
     }
-    return biggestName;
+    else if (typeof (names) == "undefined") {
+        return "Input a string first";
+    }
+    else if (names == "" || names == " " || typeof (names) == "string") {
+        return "strings outside an array is not allowed";
+    }
+    else {
+        var biggestName = names[0];
+        for (var i = 0; i < names.length; i++) {
+            if (names[i] == " " || typeof (names[i]) == "number" || names[i] == "") {
+                return "empty strigs or numbers are not allowed!";
+            }
+            else if (names[i].length > biggestName.length) {
+                biggestName = names[i];
+            }
+        }
+        return biggestName;
+    }
 }
