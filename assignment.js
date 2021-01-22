@@ -16,7 +16,6 @@ function kilometerToMeter(kilometer) {
 
 
 
-
 //Budget calculator.
 
 function budgetCalculator(wactchQuantity, phoneQuantity, laptopQuantity) {
@@ -34,7 +33,6 @@ function budgetCalculator(wactchQuantity, phoneQuantity, laptopQuantity) {
         return totalCost;
     }
 }
-
 
 
 
@@ -67,11 +65,11 @@ function hotelCost(stayingDays) {
 function megaFriend(names) {
     var biggestName = names[0];
     for (var i = 0; i < names.length; i++) {
-        if (typeof (names[i]) == "number") {
-            return "can't access numbers!";
-        }
-        else if (names[i].length > biggestName.length) {
+        if (names[i].length > biggestName.length) {
             biggestName = names[i];
+        }
+        else if (names[i] == " " || typeof (names[i]) == "number") {
+            return "empty strigs, numbers are not allowed as names!";
         }
     }
     return biggestName;
