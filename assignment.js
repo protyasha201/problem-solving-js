@@ -18,15 +18,15 @@ function kilometerToMeter(kilometer) {
 
 //Budget calculator.
 
-function budgetCalculator(wactchQuantity, phoneQuantity, laptopQuantity) {
-    if (wactchQuantity < 0 || phoneQuantity < 0 || laptopQuantity < 0) {
+function budgetCalculator(watchQuantity, phoneQuantity, laptopQuantity) {
+    if (watchQuantity < 0 || phoneQuantity < 0 || laptopQuantity < 0) {
         return "Quantity can't be negative!";
     }
-    else if (wactchQuantity == 0 && phoneQuantity == 0 && laptopQuantity == 0) {
+    else if (watchQuantity == 0 && phoneQuantity == 0 && laptopQuantity == 0) {
         return "You must buy at least one product.";
     }
     else {
-        var totalWatchCost = wactchQuantity * 50;
+        var totalWatchCost = watchQuantity * 50;
         var totalPhoneCost = phoneQuantity * 100;
         var totalLaptopCost = laptopQuantity * 500;
         var totalCost = totalWatchCost + totalPhoneCost + totalLaptopCost;
@@ -76,7 +76,7 @@ function megaFriend(names) {
         var biggestName = names[0];
         for (var i = 0; i < names.length; i++) {
             if (names[i] == " " || typeof (names[i]) == "number" || names[i] == "") {
-                return "empty strigs or numbers are not allowed!";
+                return "empty strings or numbers are not allowed!";
             }
             else if (names[i].length > biggestName.length) {
                 biggestName = names[i];
